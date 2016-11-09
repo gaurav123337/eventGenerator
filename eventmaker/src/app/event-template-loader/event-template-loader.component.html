@@ -1,5 +1,4 @@
-	<div class="container marketing">
-		<!-- START THE FEATURETTES -->
+	<!-- <div class="container marketing">
 
 		<form *ngIf="templateLoader" (ngSubmit)="onSubmit(f)" #f="ngForm">
 			<div class="form-group" >
@@ -18,23 +17,98 @@
 				<label>{{templateLoader.created_at}}</label>
 				<input type="date" class="form-control" id={{templateLoader.created_at}} placeholder={{templateLoader.created_at}} [(ngModel)]="template.created_at" name="created_at" required>
 			</div>
-			<!-- <div class="form-group" >
-				<label>{{templateLoader.modified_by}}</label>
-				<input type="text" class="form-control" id={{templateLoader.modified_by}} placeholder={{templateLoader.modified_by}} [(ngModel)]="template.modified_by" name="modified_by">
-			</div>
-			<div class="form-group" >
-				<label>{{templateLoader.modified_at}}</label>
-				<input type="date" class="form-control" id={{templateLoader.modified_at}} placeholder={{templateLoader.modified_at}} [(ngModel)]="template.modified_at" name="modified_at">
-			</div>
-			<div class="form-group" >
-				<label>{{templateLoader.attributes}}</label>
-				<input type="text" class="form-control" id={{templateLoader.attributes}} placeholder={{templateLoader.attributes}} [(ngModel)]="template.attributes" name="attributes">
-			</div>
-			<div class="form-group" >
-				<label>{{templateLoader.path}}</label>
-				<input type="text" class="form-control" id={{templateLoader.path}} placeholder={{templateLoader.path}} [(ngModel)]="template.path" name="path">
-			</div> -->
-			<attribute-template-loader></attribute-template-loader>
+
+			<attribute-template-loader ></attribute-template-loader>
 			<button type="submit" class="btn btn-default" [disabled]="!f.valid">Submit</button>
 		</form>
-	</div>
+	</div> -->
+
+    <div class="container marketing">
+    <!-- START THE FEATURETTES -->
+    <form *ngIf="templateLoader" (ngSubmit)="onSubmit()"  [formGroup] = "myForm">
+      <div class="form-group" >
+        <label>{{templateLoader.name}}</label>
+        <input type="text" class="form-control" id={{templateLoader.name}} placeholder={{templateLoader.name}} [(ngModel)]="template.name" name="Name" required
+        formControlName="name">
+      </div>
+      <div class="form-group" >
+        <label>{{templateLoader.desc}}</label>
+        <input type="text" class="form-control" id={{templateLoader.desc}} placeholder={{templateLoader.desc}} [(ngModel)]="template.desc" name="desc" required
+        formControlName="desc">
+      </div>
+      <div class="form-group" >
+        <label>{{templateLoader.created_by}}</label>
+        <input type="text" class="form-control" id={{templateLoader.created_by}} placeholder={{templateLoader.created_by}} [(ngModel)]="template.created_by" name="created_by" required
+        formControlName="created_by">
+      </div>
+      <div class="form-group" >
+        <label>{{templateLoader.created_at}}</label>
+        <input type="date" class="form-control" id={{templateLoader.created_at}} placeholder={{templateLoader.created_at}} [(ngModel)]="template.created_at" name="created_at" required
+        formControlName="created_at">
+      </div>
+
+      <!-- <attribute-template-loader formArrayName="attributes"></attribute-template-loader> -->
+      <!-- <button type="submit" class="btn btn-default" [disabled]="!f.valid">Submit</button> -->
+
+       <!--attributes-->
+        <div formArrayName="attributes">
+          <!-- <div *ngFor="let attribute of myForm.controls.attributes.controls; let i=index" class="panel panel-default">
+            <div class="panel-heading">
+              <span>{{i + 1}}</span>
+              <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.attributes.controls.length > 1" (click)="removeAttributes(i)"></span>
+            </div>
+            <div class="panel-body" [formGroupName]="i">
+              <attribute-template-loader [group]="myForm.controls.attributes.controls[i]"></attribute-template-loader>
+            </div>
+          </div> -->
+
+
+
+          <!-- <table class="table">
+            <tbody>
+              <tr>
+                <th>Name</th>
+                <th>Json Mapping</th>
+                <th>Attribute Type</th>
+              </tr>
+              <tr *ngFor="let attribute of myForm.controls.attributes.controls; let i=index" [formGroupName]="i">
+                <attribute-template-loader [group]="myForm.controls.attributes.controls[i]"></attribute-template-loader>
+                <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.attributes.controls.length > 1" (click)="removeAttributes(i)"></span>
+              </tr>
+            </tbody>
+          </table> -->
+
+
+          <div class="">
+              <div class="heading">
+                <div class="col-md-4">Name</div>
+                <div class="col-md-4">Json Mapping</div>
+                <div class="col-md-4">Attribute Type</div>
+              </div>
+              <div *ngFor="let attribute of myForm.controls.attributes.controls; let i=index" >
+              <div class="panel-body no-padding custom-padding" [formGroupName]="i">
+                <attribute-template-loader [group]="myForm.controls.attributes.controls[i]"></attribute-template-loader>
+                <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.attributes.controls.length > 1" (click)="removeAttributes(i)"></span>
+                </div>
+              </div>
+          </div>
+
+          <!-- <div *ngFor="let attribute of myForm.controls.attributes.controls; let i=index" class="panel panel-default">
+            <div class="panel-body" [formGroupName]="i">
+              <attribute-template-loader [group]="myForm.controls.attributes.controls[i]"></attribute-template-loader>
+              <span class="glyphicon glyphicon-remove pull-right" *ngIf="myForm.controls.attributes.controls.length > 1" (click)="removeAttributes(i)"></span>
+            </div>
+          </div> -->
+
+        </div>
+
+        <div class="margin-20">
+          <a (click)="addAttributes()" style="cursor: default">
+            Add another Attribute +
+          </a>
+        </div>
+
+
+      <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Submit</button>
+    </form>
+  </div>

@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+.no-left-padding{
+  padding-left: 0;
+}
+.no-right-padding{
+  padding-right: 0;
+}
+.no-bottom-padding{
+  padding-bottom: 0;
+}
+.no-top-padding{
+  padding-top: 0;
+}
+.no-padding{
+  padding: 0;
+}
+.custom-padding{
+  padding: 5px 0;
+}
