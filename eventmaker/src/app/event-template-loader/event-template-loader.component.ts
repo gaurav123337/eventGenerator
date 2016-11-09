@@ -1,47 +1,3 @@
-// import { Component, OnInit, Input } from '@angular/core';
-// import { NgForm } from '@angular/forms';
-
-// import { EventTemplate } from './event-template.modal';
-// import { EventTemplateLoaderService } from './event-template-loader.service';
-
-// @Component({
-//   selector: 'event-template-loader',
-//   templateUrl: './event-template-loader.component.html',
-//   styleUrls: ['./event-template-loader.component.css'],
-//   providers: [EventTemplateLoaderService]
-// })
-// export class EventTemplateLoaderComponent {
-//   @Input()
-//   templateLoader:EventTemplate;
-
-//   constructor(private eventTemplateLoaderService: EventTemplateLoaderService) { }
-//   template ={
-//     name:'',
-//     desc:'',
-//     created_by:'',
-//     created_at:''
-//   };
-//   getEventTemplate() {
-//     let data;
-//     this.eventTemplateLoaderService.getEventTemplate().subscribe(
-//       data => {
-//         this.templateLoader = data;
-//         console.log(this.templateLoader,"this.templateLoader");
-//       }
-//     );
-//   }
-
-//   onSubmit(form: NgForm){
-//     console.log(this.template,'It Works!!');
-//   }
-
-//   ngOnInit() {
-//   	this.getEventTemplate();
-//   }
-
-// }
-
-
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 
@@ -63,16 +19,6 @@ export class EventTemplateLoaderComponent {
   public myForm: FormGroup;
 
   constructor(private _fb: FormBuilder, private eventTemplateLoaderService: EventTemplateLoaderService) {
-    // this.myForm = new FormGroup({
-    //   'name': new FormControl('', Validators.required),
-    //   'desc':new FormControl('', Validators.required),
-    //   'created_by': new FormControl('', Validators.required),
-    //   'created_by': new FormControl('', Validators.required),
-    //   'attributes': new FormArray([
-    //     new FormControl('Cooking')
-    //    ])
-    // });
-
     this.myForm = this._fb.group({
         'name': ['', Validators.required],
         'desc':[''],
