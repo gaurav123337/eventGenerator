@@ -1,0 +1,53 @@
+clari5.aml.web.batchprocess {
+    record {
+
+        result-status {
+            attributes = [
+                { name : status, type: "string:10"}
+                { name : error-details, type: "string:50"}
+                { name : file, type: "string:4000" }
+            ]
+        }
+        file-details {
+            attributes = [
+                { name : name, type: "string:50"}
+                { name : created-date, type: timestamp}
+            ]
+        }
+
+        batch-remit-details {
+            attributes = [
+                { name : file-name, type: "string:20"}
+            ]
+        }
+
+        batch-luw-status {
+            attributes = [
+                { name : event-name, type: "String:30" }
+                { name : event-id, type: "String:300" }
+                { name : status, type: "String:30" }
+            ]
+        }
+
+        batch-remit-luw-query {
+            attributes = [
+                { name : processor, type: "String:30" }
+                { name : job-i-d, type: "String:60" }
+                { name : user-i-d, type: "String:60" }
+            ]
+        }
+        zip-map {
+            attributes = [
+                { name : file-name, type:"String:60" }
+                { name : content, type=clob }
+            ]
+        }
+
+        zip-map-list {
+            attributes = [
+                { name : list, type : [ clari5.aml.web.batchprocess.ZipMap ] }
+            ]
+        }
+    }
+
+}

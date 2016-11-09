@@ -1,0 +1,40 @@
+	<div class="container marketing">
+		<!-- START THE FEATURETTES -->
+
+		<form *ngIf="templateLoader" (ngSubmit)="onSubmit(f)" #f="ngForm">
+			<div class="form-group" >
+				<label>{{templateLoader.name}}</label>
+				<input type="text" class="form-control" id={{templateLoader.name}} placeholder={{templateLoader.name}} [(ngModel)]="template.name" name="Name" required>
+			</div>
+			<div class="form-group" >
+				<label>{{templateLoader.desc}}</label>
+				<input type="text" class="form-control" id={{templateLoader.desc}} placeholder={{templateLoader.desc}} [(ngModel)]="template.desc" name="desc" required>
+			</div>
+			<div class="form-group" >
+				<label>{{templateLoader.created_by}}</label>
+				<input type="text" class="form-control" id={{templateLoader.created_by}} placeholder={{templateLoader.created_by}} [(ngModel)]="template.created_by" name="created_by" required>
+			</div>
+			<div class="form-group" >
+				<label>{{templateLoader.created_at}}</label>
+				<input type="date" class="form-control" id={{templateLoader.created_at}} placeholder={{templateLoader.created_at}} [(ngModel)]="template.created_at" name="created_at" required>
+			</div>
+			<!-- <div class="form-group" >
+				<label>{{templateLoader.modified_by}}</label>
+				<input type="text" class="form-control" id={{templateLoader.modified_by}} placeholder={{templateLoader.modified_by}} [(ngModel)]="template.modified_by" name="modified_by">
+			</div>
+			<div class="form-group" >
+				<label>{{templateLoader.modified_at}}</label>
+				<input type="date" class="form-control" id={{templateLoader.modified_at}} placeholder={{templateLoader.modified_at}} [(ngModel)]="template.modified_at" name="modified_at">
+			</div>
+			<div class="form-group" >
+				<label>{{templateLoader.attributes}}</label>
+				<input type="text" class="form-control" id={{templateLoader.attributes}} placeholder={{templateLoader.attributes}} [(ngModel)]="template.attributes" name="attributes">
+			</div>
+			<div class="form-group" >
+				<label>{{templateLoader.path}}</label>
+				<input type="text" class="form-control" id={{templateLoader.path}} placeholder={{templateLoader.path}} [(ngModel)]="template.path" name="path">
+			</div> -->
+			<attribute-template-loader></attribute-template-loader>
+			<button type="submit" class="btn btn-default" [disabled]="!f.valid">Submit</button>
+		</form>
+	</div>

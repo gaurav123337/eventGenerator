@@ -1,0 +1,10 @@
+{
+  "name": "Name",
+  "desc": "Description",
+  "created_by": "Created By",
+  "created_at": "Created At",
+  "modified_by": "Modified By",
+  "modified_at": "Modified At",
+  "attributes": "Attributes",
+  "path" : "Path"
+}
