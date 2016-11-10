@@ -1,6 +1,5 @@
-<p>
-  events-list works!
-</p>
-<ul *ngFor="let events of eventsList; let i=index">
-  <li>{{events.desc}}</li>
-</ul>
+<div class="container marketing">
+  <ul class="no-margin no-padding">
+    <li class=" custom-margin " *ngFor="let events of eventsList">{{events.desc}}</li>
+  </ul>
+</div>

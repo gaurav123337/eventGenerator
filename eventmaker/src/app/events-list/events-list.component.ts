@@ -12,7 +12,7 @@ import { EventList } from './events-list.modal';
 export class EventsListComponent  {
 
   eventsList: EventList[];
-  //eventsInfo:any;
+
 
   constructor(private eventListService: EventsListServiceService) { }
 
@@ -30,9 +30,7 @@ export class EventsListComponent  {
       .getEvents()
       .then(eventsList => {
       		this.eventsList = eventsList.event_list;
-      		//this.eventsInfo = eventsList.event_list;
       		console.log(eventsList,"eventsList");
-      		//console.log(eventsInfo,"eventsInfo");
       });
 	}
 
