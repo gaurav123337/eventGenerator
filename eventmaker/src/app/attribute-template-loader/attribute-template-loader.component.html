@@ -1,5 +1,21 @@
-<div [formGroup]="attrForm">
+<div [formGroup]="attrForm" *ngIf="attributetypeLoader">
 	<div class="col-md-4"><input type="text" class="form-control"  placeholder="Name" formControlName="name"></div>
 	<div class="col-md-4"><input type="text" class="form-control"  placeholder="Json mapping"  formControlName="jsonMapping"></div>
-	<div class="col-md-3"><input type="text" class="form-control"  placeholder="Attribute Type" formControlName="type" ></div>
+	<div class="col-md-3">
+  <!-- <input type="text" class="form-control"  placeholder="Attribute Type" formControlName="type" [(ngModel)]="attributetypeLoader.type"> -->
+  <!-- <select formControlName="type">
+    <option *ngFor="let attributetypeLoader of attributetypeLoader.type"  [(ngValue)]="attributetypeLoader.type">{{attributetypeLoader}}</option>
+  </select> -->
+ <!--  <select formControlName="type">
+    <option *ngFor="let attributetypeLoader of attributetypeLoader.type; let i=index"  (ngValue)="attributetypeLoader.type" value="{{attributetypeLoader}}">{{attributetypeLoader}}</option>
+  </select> -->
+
+  <select formControlName="type">
+    <option  *ngFor="let attributetypeLoader of attributetypeLoader.type; let i=index"  (ngValue)="attributetypeLoader.type" value="{{attributetypeLoader}}">{{attributetypeLoader}}</option>
+  </select>
+
+  <!-- <select >
+    <option *ngFor="let attributetypeLoader of attributetypeLoader.type"  [(ngValue)]="attributetypeLoader.type">{{attributetypeLoader}}</option>
+  </select> -->
+  </div>
 </div>
