@@ -8,6 +8,7 @@ import { EventTemplateLoaderComponent } from './event-template-loader/event-temp
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AttributeTemplateLoaderComponent } from './attribute-template-loader/attribute-template-loader.component';
+import { EventsListComponent } from './events-list/events-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AttributeTemplateLoaderComponent } from './attribute-template-loader/at
     EventTemplateLoaderComponent,
     HeaderComponent,
     FooterComponent,
-    AttributeTemplateLoaderComponent
+    AttributeTemplateLoaderComponent,
+    EventsListComponent
   ],
   imports: [
     BrowserModule,

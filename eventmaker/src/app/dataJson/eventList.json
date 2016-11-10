@@ -1,0 +1,6 @@
+{
+	"event_list": [
+		{ "event-name":"IB","desc":"Internet Banking" },
+		{ "event-name":"FT","desc":"Fund Transfer" }
+	]
+}
