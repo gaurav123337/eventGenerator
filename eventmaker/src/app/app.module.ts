@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AttributeTemplateLoaderComponent } from './attribute-template-loader/attribute-template-loader.component';
 import { EventsListComponent } from './events-list/events-list.component';
+import { ViewEventComponent } from './view-event/view-event.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EventsListComponent } from './events-list/events-list.component';
     HeaderComponent,
     FooterComponent,
     AttributeTemplateLoaderComponent,
-    EventsListComponent
+    EventsListComponent,
+    ViewEventComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,18 @@
 <div class="container marketing">
   <ul class="no-margin no-padding">
-    <li class=" custom-margin " *ngFor="let events of eventsList">{{events.desc}}</li>
+    <li class=" custom-margin " (click) = "getEventDetails(events)" *ngFor="let events of eventsList">{{events.desc}}</li>
   </ul>
+  <!-- <view-event></view-event> -->
 </div>
+<div *ngIf="eventInfo">
+ <view-event [eventInfo]="eventInfo"></view-event>
+</div>
+<!-- <div class="form-group" *ngIf="eventInfo">
+    <p>{{eventInfo.name}}</p>
+    <p>{{eventInfo.desc}}</p>
+    <p>{{eventInfo.created_by}}</p>
+    <p>{{eventInfo.created_at}}</p>
+    <ul>
+      <li *ngFor="let attributes of eventInfo.attributes">{{attributes.name}} {{attributes.type}} {{attributes.jsonMapping}}</li>
+    </ul>
+</div> -->

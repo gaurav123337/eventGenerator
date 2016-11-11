@@ -1,0 +1,54 @@
+<!-- <div class="container marketing">
+  <form >
+    <div class="form-group" >
+      <label>{{eventInfo.name}}</label>
+      <input type="text" class="form-control" id={{eventInfo.name}} placeholder={{eventInfo.name}}  name="Name" required
+      formControlName="name">
+    </div>
+    <div class="form-group" >
+      <label>{{eventInfo.desc}}</label>
+      <input type="text" class="form-control" id={{eventInfo.desc}} placeholder={{eventInfo.desc}}  name="desc" required
+      formControlName="desc">
+    </div>
+    <div class="form-group" >
+      <label>{{eventInfo.created_by}}</label>
+      <input type="text" class="form-control" id={{eventInfo.created_by}} placeholder={{eventInfo.created_by}} " name="created_by" required
+      formControlName="created_by">
+    </div>
+    <div class="form-group" >
+      <label>{{eventInfo.created_at}}</label>
+      <input type="date" class="form-control" id={{eventInfo.created_at}} placeholder={{eventInfo.created_at}}  name="created_at" required
+      formControlName="created_at">
+    </div>
+
+    <div formArrayName="attributes">
+      <div class="">
+        <div class="heading">
+          <div class="col-md-4">Name</div>
+          <div class="col-md-4">Json Mapping</div>
+          <div class="col-md-4">Attribute Type</div>
+        </div>
+        <div *ngFor="let attribute of eventInfo.attributes; let i=index" >
+          <div class="panel-body no-padding custom-padding" >
+
+            <div class="col-md-4">
+              <input type="text" class="form-control"  placeholder="Name" formControlName="name" (ngValue)="{{attribute.name}}">
+            </div>
+
+            <div class="col-md-3">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div> -->
+
+ <div class="form-group" *ngIf="eventInfo">
+      <label>{{eventInfo.name | json}}</label>
+      <label>{{eventInfo | json}}</label>
+</div>
+
+<!-- <div class="form-group" >
+      <label>Hi</label>
+</div> -->

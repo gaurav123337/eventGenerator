@@ -1,0 +1,29 @@
+{
+  "name": "IB",
+  "desc": "",
+  "created_by": "",
+  "created_at": "",
+  "attributes": [
+    {
+      "name": "status",
+      "type": "string",
+      "jsonMapping": "status"
+    },
+    {
+      "name": "error-details",
+      "type": "string",
+      "jsonMapping": "error-details"
+    },
+    {
+      "name": "file",
+      "type": "string",
+      "jsonMapping": "file"
+    },
+    {
+      "name": "created-date",
+      "type": "date",
+      "jsonMapping": "created-date"
+    }
+
+  ]
+}
